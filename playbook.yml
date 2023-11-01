@@ -4,4 +4,4 @@
   become: yes
 
   roles:
-    - nginx-upgrade  # Include the Nginx upgrade role
+    - nginx  # Include the Nginx upgrade role
