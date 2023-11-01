@@ -1,6 +1,5 @@
 ---
 - name: Upgrade Nginx on Ubuntu Servers
-  hosts: nginx-servers
   become: yes
   tasks:
     - name: Update APT package cache
