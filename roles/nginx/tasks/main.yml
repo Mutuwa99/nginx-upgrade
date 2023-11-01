@@ -1,19 +1,16 @@
----
-- name: Upgrade Nginx on Ubuntu Servers
-  become: yes
-  tasks:
-    - name: Update APT package cache
-      apt:
-        update_cache: yes
 
-    - name: Upgrade Nginx
-      apt:
-        name: nginx
-        state: latest
-      notify: Restart Nginx  # Notify the handler to restart Nginx
+  - name: Update APT package cache
+    apt:
+      update_cache: yes
 
-  handlers:
-    - name: Restart Nginx
-      service:
-        name: nginx
-        state: restarted
+  - name: Upgrade Nginx
+    apt:
+      name: nginx
+      state: latest
+    notify: Restart Nginx  # Notify the handler to restart Nginx
+
+  # handlers:
+  #   - name: Restart Nginx
+  #     service:
+  #       name: nginx
+        # state: restarted
