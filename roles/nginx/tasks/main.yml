@@ -9,8 +9,3 @@
       state: latest
     notify: Restart Nginx  # Notify the handler to restart Nginx
 
-  # handlers:
-  #   - name: Restart Nginx
-  #     service:
-  #       name: nginx
-        # state: restarted

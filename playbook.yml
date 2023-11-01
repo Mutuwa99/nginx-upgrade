@@ -1,7 +1,9 @@
----
 - name: Upgrade Nginx on Servers
-  hosts: nginx-servers  # Specify your target hosts or group here
+  hosts: nginx-servers
   become: yes
 
   roles:
-    - nginx  # Include the Nginx upgrade role
+    - nginx
+
+  handlers:
+    - include: roles/nginx/handlers/main.yml
