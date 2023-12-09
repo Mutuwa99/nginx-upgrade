@@ -1,6 +1,7 @@
 - name: Upgrade Sil  Nginx version on Servers
   hosts: sil
   become: yes
+  become_user: noble
 
   roles:
     - sil-nginx
