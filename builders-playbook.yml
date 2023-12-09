@@ -1,0 +1,9 @@
+- name: Upgrade Nginx on Servers
+  hosts: builders
+  become: yes
+
+  roles:
+    - builders-nginx
+
+  handlers:
+    - include: roles/nginx/handlers/main.yml

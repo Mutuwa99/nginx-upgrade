@@ -1,0 +1,9 @@
+- name: Upgrade Bettersure Nginx on Servers
+  hosts: bettersure
+  become: yes
+
+  roles:
+    - bettersure-nginx
+
+  handlers:
+    - include: roles/nginx/handlers/main.yml

@@ -1,0 +1,9 @@
+- name: Upgrade MC Nginx on Servers
+  hosts: mc
+  become: yes
+
+  roles:
+    - mc-nginx
+
+  handlers:
+    - include: roles/nginx/handlers/main.yml

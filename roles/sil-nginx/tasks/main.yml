@@ -1,0 +1,11 @@
+
+  - name: Update APT package cache
+    apt:
+      update_cache: yes
+
+  - name: Update  Nginx version from  1.14.0 to 1.18.0
+    apt:
+      name: nginx=1.18.*
+      state: present
+    notify: Restart Nginx  # Notify the handler to restart Nginx
+

@@ -1,0 +1,9 @@
+- name: Upgrade Sil  Nginx version on Servers
+  hosts: sil
+  become: yes
+
+  roles:
+    - sil-nginx
+
+  handlers:
+    - include: roles/nginx/handlers/main.yml

@@ -1,0 +1,9 @@
+- name: Upgrade PingGo Nginx on Servers
+  hosts: pinggo
+  become: yes
+
+  roles:
+    - pinggo-nginx
+
+  handlers:
+    - include: roles/nginx/handlers/main.yml

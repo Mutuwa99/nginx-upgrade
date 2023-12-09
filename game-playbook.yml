@@ -1,9 +1,9 @@
-- name: Upgrade Nginx on Servers
-  hosts: nginx-servers
+- name: Upgrade Game Nginx on Servers
+  hosts: game
   become: yes
 
   roles:
-    - nginx
+    - game-nginx
 
   handlers:
     - include: roles/nginx/handlers/main.yml
