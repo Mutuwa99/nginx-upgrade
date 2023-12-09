@@ -1,11 +1,6 @@
 
-  - name: Update APT package cache
+  - name: Update Bettersure Nginx version from  1.14.0 to 1.18.0
     apt:
-      update_cache: yes
-
-  - name: Upgrade Nginx
-    apt:
-      name: nginx
-      state: latest
+      name: nginx=1.18.*
+      state: present
     notify: Restart Nginx  # Notify the handler to restart Nginx
-

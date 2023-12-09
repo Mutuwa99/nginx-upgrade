@@ -1,11 +1,7 @@
 
-  - name: Update APT package cache
+  - name: Update  Sil Nginx version from  1.14.0 to 1.23.4
     apt:
-      update_cache: yes
-
-  - name: Update  Nginx version from  1.14.0 to 1.18.0
-    apt:
-      name: nginx=1.18.*
+      name: nginx=1.23.4*
       state: present
     notify: Restart Nginx  # Notify the handler to restart Nginx
 
