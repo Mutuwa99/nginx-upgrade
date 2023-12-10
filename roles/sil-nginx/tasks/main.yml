@@ -1,7 +1,23 @@
+- name: Update APT package cache
+  apt:
+    update_cache: yes
+  become: yes
 
-  - name: Update  Sil Nginx version from  1.14.0 to 1.23.4
-    apt:
-      name: nginx=1.14.0
-      state: present
-    notify: Restart Nginx  # Notify the handler to restart Nginx
+- name: Add Nginx repository
+  apt_repository:
+    repo: "deb http://nginx.org/packages/mainline/ubuntu focal nginx"
+    state: present
+    filename: nginx
+  become: yes
 
+- name: Install Nginx version 1.18.0
+  apt:
+    name: nginx=1.18.*
+    state: present
+  become: yes
+
+- name: Restart Nginx
+  service:
+    name: nginx
+    state: restarted
+  become: yes
